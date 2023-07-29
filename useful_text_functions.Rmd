@@ -1,0 +1,35 @@
+---
+title: "Text Data Manipulation in R- Part I"
+author: "Shefali C."
+date: "2023-07-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I prepared this report while studying regular expression and their usage in R.  
+I refer this page to revise regex and string functions.  
+Hope this helps you too. `r emo::ji("relieved")`
+
+
+
+```{r load-libraries, warning=FALSE, message=FALSE}
+
+library(dplyr)
+library(stringr)
+library(knitr)
+#for emojis
+if(!require(emo)) {devtools::install_github("hadley/emo")}
+library(emo)
+
+```
+
+There are a lot of functions available both in base R & `stringr` package of tidyverse. Following table contains functions with similar functionality, in both packages.  
+
+```{r}
+base_R <- c()
+```
+
+
