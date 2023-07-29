@@ -42,4 +42,16 @@ View(data[grep(pattern = "M[r|s|rs]", data$name),])
 View(data[-grep(pattern = "\\s", data$name),])
 
 #3. Filter rows with a full name, i.e. Title + First name + Last name
+###NOT WORKING!!!
 View(data[grep(pattern = "[a-Za-Z]\\s[a-zA-Z]\\s[a-zA-Z]",data$name),])
+
+##PIN CODE
+
+#1. Filter rows with Patna's Pincode, i.e. pincode starting with 80
+View(data[grep(pattern = "80\\d{4}", data$pin),])
+
+#2. Filter Dehradun's Pincode
+View(data[grep(pattern = "24\\d{4}", data$pin),])
+
+#Filter out all pincodes except Patna & Dehradun
+View(data[grep(pattern = "^[^(80)(24)]", data$pin),])
