@@ -20,6 +20,7 @@ Hope this helps you too. `r emo::ji("relieved")`
 library(dplyr)
 library(stringr)
 library(knitr)
+library(kableExtra)
 #for emojis
 if(!require(emo)) {devtools::install_github("hadley/emo")}
 library(emo)
@@ -28,8 +29,49 @@ library(emo)
 
 There are a lot of functions available both in base R & `stringr` package of tidyverse. Following table contains functions with similar functionality, in both packages.  
 
-```{r}
-base_R <- c()
+```{r function-list, message=FALSE, warning=FALSE, include=FALSE}
+base_R <- c("grep()", 
+            "grepl()", 
+            "regexpr(), regmatches(), grep()",
+            "regexec",
+            "regexpr()",
+            "gregexpr()",
+            "sub()",
+            "gsub()"
+            )
+
+string_R <- c("str_subset()", 
+              "str_detect()", 
+              "str_extract()",
+              "str_match()",
+              "str_locate()",
+              "str_locate_all()",
+              "str_replace()",
+              "str_replace_all()"
+              )
+
+function_table <- data.frame(`base R` = base_R, `stringR` = string_R)
+
 ```
+
+```{r html-table}
+
+##TABLE STYLE 1
+# knitr::kable(function_table, format = "html", table.attr = "style='width:45%;'") %>% 
+#   kableExtra::kable_styling()
+
+##TABLE STYLE 2
+knitr::kable(function_table, format = "html", table.attr = "style='width:45%;'") %>% 
+  kableExtra::kable_classic(full_width = F, html_font = "Cambria")
+
+```
+
+
+
+```{r}
+
+```
+
+
 
 
